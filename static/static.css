@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Centro de Mensajes | Flix Pay</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('/static/background.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .bg-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            min-height: 100vh;
+            padding-top: 50px;
+        }
+        .logo {
+            max-width: 120px;
+        }
+        .card-custom {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            color: #111;
+        }
+        .btn-magenta {
+            background-color: #d4008f;
+            color: #fff;
+            border: none;
+        }
+        .btn-magenta:hover {
+            background-color: #b30078;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-overlay d-flex flex-column align-items-center text-center">
+        <img src="/static/logo.jpeg" class="logo mb-3" alt="Flix Pay Logo">
+        <h1 class="fw-bold">Centro de Mensajes</h1>
+        <h4 class="mb-4">Consulta tu último correo con Flix Pay</h4>
+
+        <div class="card card-custom p-4 mb-4" style="width: 90%; max-width: 600px;">
+            <form id="emailForm" action="/get_last_email" method="post">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Ingresa tu correo electrónico:</label>
+                    <input type="email"
