@@ -1,3 +1,4 @@
+import os
 import imaplib
 import email
 from email.header import decode_header
@@ -81,4 +82,5 @@ def get_last_email():
     return render_template("index.html", email_data=email_data)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
